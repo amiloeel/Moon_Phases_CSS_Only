@@ -1,0 +1,229 @@
+body{
+    background-color:#000008;
+}
+#main{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    height:300px;
+    width: 300px;
+    margin-top: 250px;
+}
+
+#inside{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+#moon{
+    background:linear-gradient(48deg, rgb(157 157 157), rgb(0 0 0));
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+    animation: spin 5s linear infinite, pulse 4s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
+}
+
+#moonlight{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    border: 21px solid #8b8b8b;
+    filter: blur(55px);
+    animation: glow 4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+#luaDireita1, #luaDireita2, #luaDireita3{
+    background:linear-gradient(270deg, rgb(137 134 134), black);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: -2;
+}
+
+#luaEsquerda1, #luaEsquerda2, #luaEsquerda3{
+    background:linear-gradient(90deg, rgb(137 134 134), black);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: -2;
+}
+
+#luaDireita2{
+    z-index: -4;
+}
+#luaDireita3{
+    z-index: -6;
+}
+#luaEsquerda2{
+    z-index: -4;
+}
+#luaEsquerda3{
+    z-index: -6;
+}
+#direito1Mask, #direito2Mask, #direito3Mask{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: #000008;
+    border-radius: 50%;
+    z-index: -1;
+    margin-left: -50px;
+    animation: vanish 4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+#direito2Mask{
+    z-index: -3;
+    margin-left: -35px;
+}
+#direito3Mask{
+    z-index: -5;
+    margin-left: -15px;
+}
+
+#esquerdo1Mask, #esquerdo2Mask, #esquerdo3Mask{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: #000008;
+    border-radius: 50%;
+    z-index: -1;
+    margin-left: 50px;
+    animation: vanish 4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+#esquerdo2Mask{
+    z-index: -3;
+    margin-left: 35px;
+}
+#esquerdo3Mask{
+    z-index: -5;
+    margin-left: 15px;
+}
+
+#grupoDireito1{
+    position: absolute;
+    margin-top: -80px;
+    margin-left:-80px;
+    animation: toright1 4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+#grupoDireito2{
+    position: absolute;
+    margin-top: -80px;
+    margin-left:-80px;
+    animation: toright2 4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+#grupoDireito3{
+    position: absolute;
+    margin-top: -80px;
+    margin-left:-80px;
+    animation: toright3 4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+#grupoEsquerdo1{
+    position: absolute;
+    margin-top: -80px;
+    margin-left:-80px;
+    animation: toleft1 4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+#grupoEsquerdo2{
+    position: absolute;
+    margin-top: -80px;
+    margin-left:-80px;
+    animation: toleft2 4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+#grupoEsquerdo3{
+    position: absolute;
+    margin-top: -80px;
+    margin-left:-80px;
+    animation: toleft3 4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+@keyframes vanish {
+    0%{background-color: transparent;}
+    66.6%{    background-color: #000008;}
+    100%{background-color: transparent;}
+}
+
+@keyframes pulse {
+    33.3%{
+        height: 82px;
+        width: 82px;
+    }
+    66.6%{
+        height: 72px;
+        width:72px;
+    }
+    100%{
+        height: 82px;
+        width: 82px;
+    }
+}
+
+@keyframes toright3 {
+    33.3%{margin-left:-80px}
+    66.6%{    margin-left: 530px;}
+    100%{margin-left:-80px}
+}
+
+@keyframes toright1 {
+    33.3%{margin-left:-80px}
+    66.6%{margin-left: 150px;}
+    100%{margin-left:-80px}
+}
+
+@keyframes toright2 {
+    33.3%{margin-left:-80px}
+    66.6%{margin-left: 350px;}
+    100%{margin-left:-80px}
+}
+
+@keyframes toleft3 {
+    33.3%{margin-left:-80px}
+    66.6%{    margin-left: -680px;}
+    100%{margin-left:-80px}
+}
+
+@keyframes toleft1 {
+    33.3%{margin-left:-80px}
+    66.6%{margin-left: -300px;}
+    100%{margin-left:-80px}
+}
+
+@keyframes toleft2 {
+    33.3%{margin-left:-80px}
+    66.6%{margin-left: -500px;}
+    100%{margin-left:-80px}
+}
+
+@keyframes spin {
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
+
+@keyframes glow {
+    33.3%{
+        border: 21px solid #8b8b8b;
+    filter: blur(55px);
+    }
+    66.6%{
+        border: 85px solid #8b8b8b7d;
+        filter: blur(202px);
+    }
+
+    100%{border: 21px solid #8b8b8b;
+        filter: blur(55px);}
+}
+
+#author{
+    text-align:center;
+    font-family: monospace;
+    margin-top: 150px;
+    color: #919191;
+}
